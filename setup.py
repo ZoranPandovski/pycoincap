@@ -1,12 +1,12 @@
-from setuptools import setup
+from distutils.core import setup
 
 setup(
    name='pycoincap',
-   version='1.0',
+   version='1.0.0',
+   url = 'https://github.com/ZoranPandovski/pycoincap',
    description='Module for getting cryptocurrency data from Coinmarketcap',
    author='Zoran Pandovski',
    author_email='zoran.pandovski@gmail.com',
-   url='https://github.com/anfederico/Stocktalk',
    packages=['pycoincap'],
-   install_requires=['']
+   install_requires=['requests']
 )
