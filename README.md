@@ -1,4 +1,5 @@
 [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/ZoranPandovski/pycoincap.svg?branch=master)](https://github.com/ZoranPandovski/pycoincap)
 
 # Pycoincap
 Python module for getting cryptocurrency data from Coinmarketcap
