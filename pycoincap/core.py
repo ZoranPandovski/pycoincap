@@ -47,6 +47,35 @@ class Coin(object):
         return "Coin"
 
 
+class Stats(object):
+
+    def __init__(self,
+                 btc_market_percent="",
+                 total_market_usd="",
+                 active_market="",
+                 active_assets="",
+                 active_currencies="",
+                 last_day_volume_usd=""):
+        self.btc_market_percent = btc_market_percent
+        self.total_market_usd = total_market_usd
+        self.active_market = active_market
+        self.active_assets = active_assets
+        self.active_currencies = active_currencies
+        self.last_day_volume_usd = last_day_volume_usd
+
+    def __str__(self):
+        statistics = " Market value: %s$" % self.total_market_usd
+        statistics += "\n Bitcoin percentage: %s" % self.btc_market_percent
+        statistics += "\n Active markets: %s" % self.active_market
+        statistics += "\n Active assets: %s" % self.active_assets
+        statistics += "\n Active currencies: %s" % self.active_currencies
+        statistics += "\n Last day changes: %s" % self.last_day_volume_usd
+        return statistics
+
+    def __repr__(self):
+        return "Stats"
+
+
 class CryptoMarket(object):
     __COIN_MARKET_CAP_URL = \
         'https://api.coinmarketcap.com/v1/'
@@ -62,7 +91,7 @@ class CryptoMarket(object):
         data = response.json()
         return data
 
-    def get_coin(self, name, **kwargs):
+    def coin(self, name, **kwargs):
         params = {}
         params.update(**kwargs)
         data = self.__call_market(name, params)
@@ -76,8 +105,13 @@ class CryptoMarket(object):
                     coin['percent_change_24h'], coin['percent_change_7d'],
                     coin['last_updated'], coin['24h_volume_usd'])
 
-    def get_stats(self, **kwargs):
+    def stats(self, **kwargs):
         params = {}
         params.update(**kwargs)
         data = self.__call_market('global', params)
-        return data
+        if 'error' in data:
+            return 'Error occurred'
+        return Stats(data['total_market_cap_usd'],
+                     data['bitcoin_percentage_of_market_cap'],
+                     data['active_markets'], data['active_assets'],
+                     data['active_currencies'], data['total_24h_volume_usd'])
