@@ -91,10 +91,10 @@ class CryptoMarket(object):
         data = response.json()
         return data
 
-    def coin(self,  **kwargs):
+    def coin(self,  coin_id, **kwargs):
         params = {}
         params.update(**kwargs)
-        data = self.__call_market('ticker', params)
+        data = self.__call_market('ticker/{coin_id}'.format(coin_id=coin_id), params)
         if 'error' in data:
             return 'Error occurred'
         coin = data[0]
