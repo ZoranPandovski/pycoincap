@@ -6,6 +6,6 @@ install:
   - pip install coveralls
 # command to run tests
 script:
-  - python -m pycoincap.tests.test_core
+  - python -m pycoincap.tests.test_core --with-coverage --cover-package=pycoincap.core --cover-inclusive --cover-erase --cover-tests
 after_success:
   - coveralls
