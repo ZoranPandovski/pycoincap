@@ -3,9 +3,10 @@ python:
   - "2.7"
 install:  
   - pip install -r requirements.txt
-  - pip install python-coveralls
+  - pip install  coverage
 # command to run tests
 script:
-  - python -m pycoincap.tests.test_core coveralls -v --cov coveralls
-after_success:
-  - coveralls
+  - python -m unittest pycoincap.tests.test_core
+  - coverage run -m unittest pycoincap.tests.test_core
+  - coverage report -m
+
