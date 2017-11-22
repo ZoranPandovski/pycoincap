@@ -4,9 +4,10 @@ python:
 install:  
   - pip install -r requirements.txt
   - pip install  coverage
+  - pip install coveralls
 # command to run tests
 script:
-  - python -m unittest pycoincap.tests.test_core
   - coverage run -m unittest pycoincap.tests.test_core
   - coverage report -m
-
+after_success:
+  - coveralls
