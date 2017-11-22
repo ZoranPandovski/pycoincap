@@ -6,7 +6,7 @@ Python module for getting cryptocurrency data from Coinmarketcap
 
 # Run tests
 ```
-   python -m pycoincap.tests.test_core
+ python -m pycoincap.tests.test_core
 ```
 
 ## Installation:
@@ -23,7 +23,7 @@ From source use
 Retrieve informations from https://coinmarketcap.com/
 
 Get coin informations
-```
+```python
 from pycoincap import CryptoMarket as market
 
 # Load data data from coinmarketcap
@@ -48,7 +48,7 @@ print BTC.price_usd
 ```
 
 Get stats
-```
+```python
 from pycoincap import CryptoMarket as market
 
 # Load data data from coinmarketcap
