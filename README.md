@@ -7,7 +7,7 @@ Python module for getting cryptocurrency data from Coinmarketcap
 
 # Run tests
 ```
- python -m pycoincap.tests.test_core
+ python -m unittests pycoincap.tests.test_core
 ```
 
 ## Installation:
