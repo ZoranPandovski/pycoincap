@@ -92,11 +92,24 @@ class CryptoMarket(object):
         return data
 
     def coin(self,  coin_id, **kwargs):
+        '''
+
+        :param coin_id: Name of coin e.g bitcoin
+        :param kwargs: Optional parameters:
+                (int) start - return results from rank [start] and above
+                (int) limit - return a maximum of [limit] results
+                (string) convert - return price, 24h volume, and market cap in
+                terms of another currency. Valid values are:
+                "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR",
+                "GBP", "HKD", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN",
+                "MYR", "NOK", "NZD", "PHP", "PKR", "PLN", "RUB", "SEK", "SGD",
+                "THB", "TRY", "TWD", "ZAR"
+
+        :return:  Returns a object containing the info for currencie
+        '''
         params = {}
         params.update(**kwargs)
         data = self.__call_market('ticker/{coin_id}'.format(coin_id=coin_id), params)
-        if 'error' in data:
-            return 'Error occurred'
         coin = data[0]
         return Coin(coin['id'], coin['name'], coin['symbol'], coin['rank'],
                     coin['price_usd'], coin['price_btc'],
@@ -106,11 +119,20 @@ class CryptoMarket(object):
                     coin['last_updated'], coin['24h_volume_usd'])
 
     def stats(self, **kwargs):
+        '''
+
+        :param kwargs: Optional parameters:
+        (string) convert - return 24h volume, and market cap
+        in terms of another currency. Valid values are:
+         "AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR",
+                "GBP", "HKD", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN",
+                "MYR", "NOK", "NZD", "PHP", "PKR", "PLN", "RUB", "SEK", "SGD",
+                "THB", "TRY", "TWD", "ZAR"
+        :return: Returns object that contains cryptocurrency statistics.
+        '''
         params = {}
         params.update(**kwargs)
         data = self.__call_market('global', params)
-        if 'error' in data:
-            return 'Error occurred'
         return Stats(data['total_market_cap_usd'],
                      data['bitcoin_percentage_of_market_cap'],
                      data['active_markets'], data['active_assets'],
