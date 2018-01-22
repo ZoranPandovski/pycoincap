@@ -11,7 +11,9 @@
 [![Coverage Status](https://coveralls.io/repos/github/ZoranPandovski/pycoincap/badge.svg?branch=master)](https://coveralls.io/github/ZoranPandovski/pycoincap?branch=master)
 
 # Pycoincap
-Python module for getting cryptocurrency data from Coinmarketcap
+Python module for getting data from Coinmarketcap, cryptocurrencies market cap, rankings, price, supply, circulating supply and other useful informations.
+
+
 
 # Run tests
 ```
