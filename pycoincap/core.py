@@ -36,11 +36,11 @@ class Coin(object):
         info = "Coin: %s \nRanked: %s" % (self.name, self.rank)
         info += "\nPrice : %s $ \nPrice BTC: %s " % (self.price_usd,
                                                    self.price_btc)
-        info += "\nAvailable supply: %s \nTotal supply: %s"\
+        info += "\nCirculating supply: %s \nTotal supply: %s"\
                 %(self.available_supply, self.total_supply)
-        info += "\nPercent changes:1h  = %s\n \t\t24h = %s\n \t\t1d  = %s" \
-                %(self.percent_change_1h, self.percent_change_7d,
-                  self.percent_change_24h)
+        info += "\nPercent changes:1h  = %s\n \t\t24h = %s\n \t\t7d  = %s" \
+                %(self.percent_change_1h, self.percent_change_24h,
+                  self.percent_change_7d)
         return info
 
     def __repr__(self):
@@ -133,7 +133,7 @@ class CryptoMarket(object):
         params = {}
         params.update(**kwargs)
         data = self.__call_market('global', params)
-        return Stats(data['total_market_cap_usd'],
-                     data['bitcoin_percentage_of_market_cap'],
+        return Stats(data['bitcoin_percentage_of_market_cap'],
+                     data['total_market_cap_usd'],
                      data['active_markets'], data['active_assets'],
                      data['active_currencies'], data['total_24h_volume_usd'])
