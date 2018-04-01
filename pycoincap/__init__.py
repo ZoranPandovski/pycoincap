@@ -1,1 +1,1 @@
-from core import CryptoMarket
+from pycoincap.core import CryptoMarket
