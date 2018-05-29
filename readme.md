@@ -1,6 +1,6 @@
 
 <h1 align="center">
-	<img width="400" src="https://cdn-images-1.medium.com/max/1024/1*TY0eUcLT6us5Jz1VT1Tymg.jpeg" alt="Cryptocurrencies">
+	<img width="400" src="media/crypto-currencies.jpeg" alt="Cryptocurrencies">
 	<br>
 	<br>
 </h1>
