@@ -8,6 +8,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2261f7e25b5f42198eb3d890e082d806)](https://www.codacy.com/app/ZoranPandovski/pycoincap?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ZoranPandovski/pycoincap&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/ZoranPandovski/pycoincap.svg?branch=master)](https://github.com/ZoranPandovski/pycoincap)
 [![Coverage Status](https://coveralls.io/repos/github/ZoranPandovski/pycoincap/badge.svg?branch=master)](https://coveralls.io/github/ZoranPandovski/pycoincap?branch=master)
+[![BCH compliance](https://bettercodehub.com/edge/badge/ZoranPandovski/pycoincap?branch=master)](https://bettercodehub.com/)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/ZoranPandovski/pycoincap/issues)
 [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
