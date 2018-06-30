@@ -9,6 +9,7 @@
 [![Build Status](https://travis-ci.org/ZoranPandovski/pycoincap.svg?branch=master)](https://github.com/ZoranPandovski/pycoincap)
 [![Coverage Status](https://coveralls.io/repos/github/ZoranPandovski/pycoincap/badge.svg?branch=master)](https://coveralls.io/github/ZoranPandovski/pycoincap?branch=master)
 [![BCH compliance](https://bettercodehub.com/edge/badge/ZoranPandovski/pycoincap?branch=master)](https://bettercodehub.com/)
+[![Known Vulnerabilities](https://snyk.io/test/github/ZoranPandovski/pycoincap/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/ZoranPandovski/pycoincap?targetFile=requirements.txt)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/ZoranPandovski/pycoincap/issues)
 [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
