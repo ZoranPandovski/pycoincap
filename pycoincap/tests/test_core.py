@@ -19,6 +19,8 @@ class TestCore(unittest.TestCase):
         self.assertTrue(float(coin.percent_change_7d))
         self.assertTrue(float(coin.last_updated))
         self.assertTrue(float(coin.last_day_volume_usd))
+        self.assertTrue(str(coin.__str__()))
+        self.assertTrue("Coin",coin.__repr__())
 
     def assertStats(self, stats):
         self.assertTrue(float(stats.btc_market_percent))
@@ -27,6 +29,11 @@ class TestCore(unittest.TestCase):
         self.assertTrue(int(stats.active_assets))
         self.assertTrue(int(stats.active_currencies))
         self.assertTrue(float(stats.last_day_volume_usd))
+        self.assertTrue(str(stats.__str__()))
+        self.assertTrue("Stats",stats.__repr__())
+
+    def assertStr(self,coin):
+        self.assertTrue(isinstance(coin, str))
 
     def test_bitcoin(self):
         m = market()
@@ -42,6 +49,8 @@ class TestCore(unittest.TestCase):
         m = market()
         stats = m.stats()
         self.assertStats(stats)
+
+
 
 
 if __name__ == '__main__':
