@@ -1,4 +1,7 @@
 import unittest
+import requests
+import pytest
+from mock import patch, Mock
 from pycoincap import CryptoMarket as market
 
 
@@ -32,9 +35,6 @@ class TestCore(unittest.TestCase):
         self.assertTrue(str(stats.__str__()))
         self.assertTrue("Stats",stats.__repr__())
 
-    def assertStr(self,coin):
-        self.assertTrue(isinstance(coin, str))
-
     def test_bitcoin(self):
         m = market()
         coin = m.coin('bitcoin')
@@ -49,6 +49,18 @@ class TestCore(unittest.TestCase):
         m = market()
         stats = m.stats()
         self.assertStats(stats)
+
+    @patch('pycoincap.core.requests.get')
+    def test_HttpError(self, get_mock):
+        http_error = requests.exceptions.HTTPError('Unable to connect')
+        mock_raise_for_status = Mock(side_effect=http_error)
+        get_mock.raise_for_status = mock_raise_for_status
+        get_mock.side_effect = http_error
+
+        m = market()
+
+        with pytest.raises(requests.exceptions.HTTPError):
+            m.coin('bitcoin')
 
     def test_coin_str(self):
         m = market()
