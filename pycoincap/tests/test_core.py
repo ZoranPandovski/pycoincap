@@ -62,6 +62,26 @@ class TestCore(unittest.TestCase):
         with pytest.raises(requests.exceptions.HTTPError):
             m.coin('bitcoin')
 
+    def test_coin_str(self):
+        m = market()
+        coin = m.coin('bitcoin')
+        self.assertIn("Coin:", str(coin))
+
+    def test_coin_repr(self):
+        m = market()
+        coin = m.coin('bitcoin')
+        self.assertEqual("Coin", repr(coin))
+
+    def test_stats_str(self):
+        m = market()
+        stats = m.stats()
+        self.assertIn("Market value:", str(stats))
+
+    def test_stats_repr(self):
+        m = market()
+        stats = m.stats()
+        self.assertEqual("Stats", repr(stats))
+
 
 if __name__ == '__main__':
     unittest.main()
