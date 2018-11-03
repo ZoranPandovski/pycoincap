@@ -2,7 +2,7 @@ import requests
 
 
 class Coin(object):
-    def __init__(self, coin_info):
+    def __init__(self, coin_info=''):
         self.id = id
         self.coin_info = coin_info
 
@@ -26,27 +26,23 @@ class Coin(object):
 
 class Stats(object):
 
-    def __init__(self,
-                 btc_market_percent="",
-                 total_market_usd="",
-                 active_market="",
-                 active_assets="",
-                 active_currencies="",
-                 last_day_volume_usd=""):
-        self.btc_market_percent = btc_market_percent
-        self.total_market_usd = total_market_usd
-        self.active_market = active_market
-        self.active_assets = active_assets
-        self.active_currencies = active_currencies
-        self.last_day_volume_usd = last_day_volume_usd
+    def __init__(self, market_info=''):
+        self.market_info = market_info
 
     def __str__(self):
-        statistics = " Market value: %s$" % self.total_market_usd
-        statistics += "\n Bitcoin percentage: %s" % self.btc_market_percent
-        statistics += "\n Active markets: %s" % self.active_market
-        statistics += "\n Active assets: %s" % self.active_assets
-        statistics += "\n Active currencies: %s" % self.active_currencies
-        statistics += "\n Last day changes: %s" % self.last_day_volume_usd
+        statistics = \
+            " Market value: %s$" % self.market_info['total_market_usd']
+        statistics += \
+            "\n Bitcoin percentage: %s" %\
+            self.market_info['btc_market_percent']
+        statistics += \
+            "\n Active markets: %s" % self.market_info['active_market']
+        statistics += \
+            "\n Active assets: %s" % self.market_info['active_assets']
+        statistics += \
+            "\n Active currencies: %s" % self.market_info['active_currencies']
+        statistics += \
+            "\n Last day changes: %s" % self.market_info['last_day_volume_usd']
         return statistics
 
     def __repr__(self):
@@ -105,7 +101,4 @@ class CryptoMarket(object):
         params = {}
         params.update(**kwargs)
         data = self.__call_market('global', params)
-        return Stats(data['bitcoin_percentage_of_market_cap'],
-                     data['total_market_cap_usd'],
-                     data['active_markets'], data['active_assets'],
-                     data['active_currencies'], data['total_24h_volume_usd'])
+        return Stats(data)
