@@ -3,7 +3,6 @@ import requests
 
 class Coin(object):
     def __init__(self, coin_info=''):
-        self.id = id
         self.coin_info = coin_info
 
     def __str__(self):
@@ -84,7 +83,7 @@ class CryptoMarket(object):
         params.update(**kwargs)
         data = self.__call_market('ticker/{coin_id}'.format(coin_id=coin_id), params)
         coin = data[0]
-        return Coin(coin['id'], coin)
+        return Coin(coin)
 
     def stats(self, **kwargs):
         '''
