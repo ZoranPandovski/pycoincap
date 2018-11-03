@@ -30,18 +30,19 @@ class Stats(object):
 
     def __str__(self):
         statistics = \
-            " Market value: %s$" % self.market_info['total_market_usd']
+            " Market value: %s$" % self.market_info['total_market_cap_usd']
         statistics += \
             "\n Bitcoin percentage: %s" %\
-            self.market_info['btc_market_percent']
+            self.market_info['bitcoin_percentage_of_market_cap']
         statistics += \
-            "\n Active markets: %s" % self.market_info['active_market']
+            "\n Active markets: %s" % self.market_info['active_markets']
         statistics += \
             "\n Active assets: %s" % self.market_info['active_assets']
         statistics += \
             "\n Active currencies: %s" % self.market_info['active_currencies']
         statistics += \
-            "\n Last day changes: %s" % self.market_info['last_day_volume_usd']
+            "\n Last day changes: %s" % \
+            self.market_info['total_24h_volume_usd']
         return statistics
 
     def __repr__(self):
