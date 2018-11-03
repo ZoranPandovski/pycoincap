@@ -2,45 +2,22 @@ import requests
 
 
 class Coin(object):
-    def __init__(self,
-                 id="",
-                 name="",
-                 symbol="",
-                 rank="",
-                 price_usd="",
-                 price_btc="",
-                 market_cap_usd="",
-                 available_supply="",
-                 total_supply="",
-                 percent_change_1h="",
-                 percent_change_24h="",
-                 percent_change_7d="",
-                 last_updated="",
-                 last_day_volume_usd=""):
+    def __init__(self, coin_info):
         self.id = id
-        self.name = name
-        self.symbol = symbol
-        self.rank = rank
-        self.price_usd = price_usd
-        self.price_btc = price_btc
-        self.market_cap_usd = market_cap_usd
-        self.available_supply = available_supply
-        self.total_supply = total_supply
-        self.percent_change_1h = percent_change_1h
-        self.percent_change_24h = percent_change_24h
-        self.percent_change_7d = percent_change_7d
-        self.last_updated = last_updated
-        self.last_day_volume_usd = last_day_volume_usd
+        self.coin_info = coin_info
 
     def __str__(self):
-        info = "Coin: %s \nRanked: %s" % (self.name, self.rank)
-        info += "\nPrice : %s $ \nPrice BTC: %s " % (self.price_usd,
-                                                   self.price_btc)
+        info = "Coin: %s \nRanked: %s" % (self.coin_info['name'],
+                                          self.coin_info['rank'])
+        info += "\nPrice : %s $ \nPrice BTC: %s " % (
+            self.coin_info['price_usd'], self.coin_info['price_btc'])
         info += "\nCirculating supply: %s \nTotal supply: %s"\
-                %(self.available_supply, self.total_supply)
+                %(self.coin_info['available_supply'],
+                  self.coin_info['total_supply'])
         info += "\nPercent changes:1h  = %s\n \t\t24h = %s\n \t\t7d  = %s" \
-                %(self.percent_change_1h, self.percent_change_24h,
-                  self.percent_change_7d)
+                %(self.coin_info['percent_change_1h'],
+                  self.coin_info['percent_change_24h'],
+                  self.coin_info['percent_change_7d'])
         return info
 
     def __repr__(self):
@@ -111,12 +88,7 @@ class CryptoMarket(object):
         params.update(**kwargs)
         data = self.__call_market('ticker/{coin_id}'.format(coin_id=coin_id), params)
         coin = data[0]
-        return Coin(coin['id'], coin['name'], coin['symbol'], coin['rank'],
-                    coin['price_usd'], coin['price_btc'],
-                    coin['market_cap_usd'], coin['available_supply'],
-                    coin['total_supply'], coin['percent_change_1h'],
-                    coin['percent_change_24h'], coin['percent_change_7d'],
-                    coin['last_updated'], coin['24h_volume_usd'])
+        return Coin(coin['id'], coin)
 
     def stats(self, **kwargs):
         '''
