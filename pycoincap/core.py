@@ -2,7 +2,7 @@ import requests
 
 
 class Coin(object):
-    def __init__(self, coin_info=''):
+    def __init__(self, coin_info):
         self.coin_info = coin_info
 
     def __str__(self):
@@ -25,15 +25,13 @@ class Coin(object):
 
 class Stats(object):
 
-    def __init__(self, market_info=''):
+    def __init__(self, market_info):
         self.market_info = market_info
 
     def __str__(self):
-        #TODO: fix this
-        #statistics = \
-        #    " Market value: %s$" % self.market_info['total_market_usd']
-        #statistics += \
         statistics = \
+            " Market value: %s$" % self.market_info['total_market_usd']
+        statistics += \
             "\n Bitcoin percentage: %s" %\
             self.market_info['btc_market_percent']
         statistics += \
