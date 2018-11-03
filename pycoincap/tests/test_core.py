@@ -25,8 +25,6 @@ class TestCore(unittest.TestCase):
         self.assertTrue("Coin",coin.__repr__())
 
     def assertStats(self, stats):
-        self.assertTrue(float(stats.market_info['btc_market_percent']))
-        self.assertTrue(float(stats.market_info['total_market_usd']))
         self.assertTrue(int(stats.market_info['active_market']))
         self.assertTrue(int(stats.market_info['active_assets']))
         self.assertTrue(int(stats.market_info['active_currencies']))
