@@ -29,9 +29,11 @@ class Stats(object):
         self.market_info = market_info
 
     def __str__(self):
+        #TODO: fix this
+        #statistics = \
+        #    " Market value: %s$" % self.market_info['total_market_usd']
+        #statistics += \
         statistics = \
-            " Market value: %s$" % self.market_info['total_market_usd']
-        statistics += \
             "\n Bitcoin percentage: %s" %\
             self.market_info['btc_market_percent']
         statistics += \
