@@ -21,7 +21,6 @@ class TestCore(unittest.TestCase):
         self.assertTrue(float(coin.coin_info['percent_change_24h']))
         self.assertTrue(float(coin.coin_info['percent_change_7d']))
         self.assertTrue(float(coin.coin_info['last_updated']))
-        self.assertTrue(float(coin.coin_info['last_day_volume_usd']))
         self.assertTrue(str(coin.__str__()))
         self.assertTrue("Coin",coin.__repr__())
 
