@@ -12,6 +12,8 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/ZoranPandovski/pycoincap/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/ZoranPandovski/pycoincap?targetFile=requirements.txt)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/ZoranPandovski/pycoincap/issues)
 [![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/ZoranPandovski/pycoincap.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ZoranPandovski/pycoincap/alerts/)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/ZoranPandovski/pycoincap.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ZoranPandovski/pycoincap/context:python)
 
 # Pycoincap
 Python module for getting data from Coinmarketcap, cryptocurrencies market cap, rankings, price, supply, circulating supply and other useful informations.
