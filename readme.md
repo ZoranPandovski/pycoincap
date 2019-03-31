@@ -5,8 +5,8 @@
 	<br>
 </h1>
 
+[![Build Status](https://img.shields.io/travis/ZoranPandovski/pycoincap/master.svg?logo=travis)](https://github.com/ZoranPandovski/pycoincap)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/2261f7e25b5f42198eb3d890e082d806)](https://www.codacy.com/app/ZoranPandovski/pycoincap?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ZoranPandovski/pycoincap&amp;utm_campaign=Badge_Grade)
-[![Build Status](https://travis-ci.org/ZoranPandovski/pycoincap.svg?branch=master)](https://github.com/ZoranPandovski/pycoincap)
 [![Coverage Status](https://coveralls.io/repos/github/ZoranPandovski/pycoincap/badge.svg?branch=master)](https://coveralls.io/github/ZoranPandovski/pycoincap?branch=master)
 [![BCH compliance](https://bettercodehub.com/edge/badge/ZoranPandovski/pycoincap?branch=master)](https://bettercodehub.com/)
 [![Known Vulnerabilities](https://snyk.io/test/github/ZoranPandovski/pycoincap/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/ZoranPandovski/pycoincap?targetFile=requirements.txt)
