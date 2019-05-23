@@ -11,10 +11,10 @@ class Coin(object):
         info += "\nPrice : %s $ \nPrice BTC: %s " % (
             self.coin_info['price_usd'], self.coin_info['price_btc'])
         info += "\nCirculating supply: %s \nTotal supply: %s"\
-                %(self.coin_info['available_supply'],
+                % (self.coin_info['available_supply'],
                   self.coin_info['total_supply'])
         info += "\nPercent changes:1h  = %s\n \t\t24h = %s\n \t\t7d  = %s" \
-                %(self.coin_info['percent_change_1h'],
+                % (self.coin_info['percent_change_1h'],
                   self.coin_info['percent_change_24h'],
                   self.coin_info['percent_change_7d'])
         return info
@@ -82,7 +82,8 @@ class CryptoMarket(object):
         '''
         params = {}
         params.update(**kwargs)
-        data = self.__call_market('ticker/{coin_id}'.format(coin_id=coin_id), params)
+        data = self.__call_market('ticker/{coin_id}'
+                                  .format(coin_id=coin_id), params)
         coin = data[0]
         return Coin(coin)
 
