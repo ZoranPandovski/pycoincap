@@ -6,8 +6,11 @@ cache: pip
 install:  
   - pip install -r requirements.txt
   - pip install  coverage
-  - pip install coveralls
+  - pip install coveralls  
+  - pip install flake8 .
 # command to run tests
+before_script:
+  - "flake8 --show-source --builtins=_ Teradata"
 script:
   - coverage run -m unittest pycoincap.tests.test_core
   - coverage report -m
